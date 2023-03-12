@@ -58,12 +58,14 @@ img {
 }
 
 .container {
+  
   max-width: 428px;
   margin-left: auto;
   margin-right: auto;
   padding-left: 16px;
   padding-right: 16px;
 }
+
 
 
 @media screen and (min-width: 768px) {
@@ -90,10 +92,15 @@ img {
   padding-top: 24px;
   padding-bottom: 23px;
   position: sticky;
+
   top: 0;
   z-index: 100;
   border-bottom: 1px solid var(--subtle-backgrounds-color);
 }
+
+
+
+
 
 @media (min-width: 768px) {
   .header {
@@ -129,6 +136,7 @@ img {
   margin-left: auto;
   line-height: 0;
   outline: none;
+  border: none;
   background-color: transparent;
 }
 
@@ -137,15 +145,19 @@ img {
     display: none;
   }
 }
+
 .contacts {
   display: none;
 }
+
+
 
 @media (min-width: 768px) {
   .contacts {
     font-style: normal;
     margin-left: auto;
-    display: flex;
+    display: block;
+    
   }
 }
 .site-nav {
@@ -161,12 +173,18 @@ img {
 }
 
 @media (min-width: 768px) {
+  .address-list {
+    display: flex;
+      flex-wrap: wrap;
+      gap: 4px;
+      justify-content: flex-end;
+  }
   .address-link {
     font-size: 12px;
     line-height: 1.17;
     letter-spacing: 0.04em;
     color: var(--primary-text-color);
-    text-decoration: none;
+    text-decoration: none; 
   }
   .header-link {
     font-weight: 500;
@@ -188,7 +206,7 @@ img {
     content: "";
     position: absolute;
     left: 0;
-    bottom: -28px;
+    bottom: -29px;
     width: 100%;
     height: 4px;
     border-radius: 2px;
@@ -212,14 +230,17 @@ img {
   .address-link:focus {
     color: var(--accent-color);
   }
-
+ 
 }
 
 .hero {
   background-color: var(--title-text-color);
   padding-top: 112px;
   padding-bottom: 112px;
+  
 }
+
+
 
 .bg-images {
   background-repeat: no-repeat;
@@ -276,6 +297,7 @@ img {
 }
 
 @media (min-width: 1200px) {
+
   .bg-images {
     background-repeat: no-repeat;
     background-size: cover;
@@ -365,6 +387,7 @@ img {
 .backdrop.is-hidden {
   opacity: 0;
   pointer-events: none;
+  overflow-y: auto
 }
 
 .modal {
@@ -374,6 +397,7 @@ img {
   transform: translate(-50%, -50%);
   opacity: 1;
   width: 408px;
+  max-width: 100%;
   padding: 72px 24px 24px;
   border-radius: 4px;
   background: var(--modal-background);
@@ -381,6 +405,7 @@ img {
     0px 2px 1px rgba(0, 0, 0, 0.2);
   transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
+
 
 .modal-close-btn {
   width: 24px;
@@ -412,6 +437,8 @@ img {
   flex-direction: column;
   justify-content: center;
 }
+
+
 
 .form-title {
   font-weight: 500;
@@ -641,7 +668,7 @@ img {
   color: var(--title-text-color);
   text-decoration: none;
 }
-.current-nemu-link {
+.current-menu-link {
 color: var(--primary-brand-color);
 }
 
@@ -662,8 +689,14 @@ color: var(--primary-brand-color);
   font-size: 20px;
   line-height: 1.2;
   letter-spacing: 0.02em;
+
 }
 
+.address-email {
+  color: var(--primary-text-color);
+   text-decoration: none;
+
+}
 
 
 .phone-number {
@@ -791,6 +824,7 @@ color: var(--primary-brand-color);
     font-weight: 500;
     font-size: 20px;
     line-height: 1.2;
+     text-align: left;
   }
 }
 
@@ -1015,6 +1049,7 @@ color: var(--primary-brand-color);
   background-color: var(--title-text-color);
   padding-top: 96px;
   padding-bottom: 96px;
+ 
 }
 
 @media (min-width: 1200px) {
@@ -1023,9 +1058,6 @@ color: var(--primary-brand-color);
     padding-bottom: 100px;
   }
 }
-
-
-
 
 .footer-container {
   width: 264px;
@@ -1040,13 +1072,17 @@ color: var(--primary-brand-color);
 
 @media (min-width: 768px) {
 .footer-container {
-  margin-left: 0;
+  margin-left: 108px;
   margin-right: 0;
   align-items: flex-start;
 }
 }
 
-
+@media (min-width: 1200px) {
+  .footer-container {
+    margin-left: auto;
+  }
+}
 
 .footer-logo {
   color: var(--primary-brand-color);
@@ -1088,6 +1124,7 @@ color: var(--primary-brand-color);
 @media (min-width: 1200px) {
   .footer-social-container {
     margin-left: 120px;
+    margin-right: 80px;
   }
 }
 
@@ -1128,8 +1165,16 @@ color: var(--primary-brand-color);
 }
 
 .subscribe-wrapper {
+  margin-left: auto;
   margin-top: 72px;
   width: 100%;
+}
+
+@media (min-width: 768px) {
+  .subscribe-wrapper {
+margin-left: 108px;
+  }
+  
 }
 
 @media (min-width: 1200px) {
@@ -1228,19 +1273,12 @@ color: var(--primary-brand-color);
   fill: var(--white-color);
 }
 
-@media (min-width: 768px) {
-  .footer-wrapper {
-    display: flex;
-    flex-wrap: wrap;
-    padding: 0 92px;
-  }
-}
+
 
 @media (min-width: 768px) {
   .footer-wrapper {
     display: flex;
     flex-wrap: wrap;
-    padding: 0 92px;
   }
 }
 
